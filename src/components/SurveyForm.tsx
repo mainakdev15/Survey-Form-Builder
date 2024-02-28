@@ -1,8 +1,8 @@
-"use client"
+"use client";
 // components/SurveyForm.tsx
-import React, { FC } from 'react';
-import { Card } from './ui/card';
-import { Button } from "@/components/ui/button"
+import React, { FC } from "react";
+import { Card } from "./ui/card";
+import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
@@ -11,13 +11,13 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form"
-import TextFormField from './formElements/TextFormField';
-import SelectFormField from './formElements/SelectFormField';
-import CheckboxFormField from './formElements/CheckboxFormField';
-import NumberFormField from './formElements/NumberFormField';
-import RadioFormField from './formElements/RadioFormField';
-import { useForm } from 'react-hook-form';
+} from "@/components/ui/form";
+import TextFormField from "./formElements/TextFormField";
+import SelectFormField from "./formElements/SelectFormField";
+import CheckboxFormField from "./formElements/CheckboxFormField";
+import NumberFormField from "./formElements/NumberFormField";
+import RadioFormField from "./formElements/RadioFormField";
+import { useForm } from "react-hook-form";
 
 type Option = {
   label: string;
@@ -38,24 +38,24 @@ type SurveyFormProps = {
 };
 
 const SurveyForm: FC<SurveyFormProps> = ({ schema }) => {
-  const form = useForm()
+  const form = useForm();
   const renderFormField = (question: Question, index: number) => {
     switch (question.type) {
-      case 'text':
-      case 'email':
-      case 'textarea':
+      case "text":
+      case "email":
+      case "textarea":
         return <TextFormField key={index} {...question} />;
 
-      case 'select':
+      case "select":
         return <SelectFormField key={index} {...question} />;
 
-      case 'number':
+      case "number":
         return <NumberFormField key={index} {...question} />;
 
-      case 'checkbox':
+      case "checkbox":
         return <CheckboxFormField key={index} {...question} />;
 
-      case 'radio':
+      case "radio":
         return <RadioFormField key={index} {...question} />;
 
       default:
@@ -64,15 +64,12 @@ const SurveyForm: FC<SurveyFormProps> = ({ schema }) => {
   };
 
   return (
-    <Card>
-      <Form {...form}>
-        <form>
-      {schema.map((question, index) => renderFormField(question, index))}
-      <button type="submit">Submit</button>
+    <Form {...form}>
+      <form className="space-y-3">
+        {schema.map((question, index) => renderFormField(question, index))}
+        <button type="submit">Submit</button>
       </form>
     </Form>
-    </Card>
-    
   );
 };
 

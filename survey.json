@@ -1,105 +1,104 @@
-
 [
-    {
-      "type": "text",
-      "name": "name",
-      "label": "Name",
-      "required": true,
-      "config": {
-        "maxLength": 100
-      }
-    },
-    {
-      "type": "email",
-      "name": "email",
-      "label": "Email",
-      "required": true,
-      "config": {
-        "pattern": "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+[.][a-zA-Z]{2,}$"
-      }
-    },
-    {
-      "type": "textarea",
-      "name": "message",
-      "label": "Message",
-      "required": true,
-      "config": {
-        "maxLength": 500
-      }
-    },
-    {
-      "type": "select",
-      "name": "jobType",
-      "label": "Job Type",
-      "required": true,
-      "options": [
-        {
-          "label": "Professional Programmer",
-          "value": "professional"
-        },
-        {
-          "label": "Student",
-          "value": "student"
-        }
-      ],
-      "config": {
-        "label": "Value"
-      }
-    },
-    {
-      "type": "number",
-      "name": "yearsProgramming",
-      "label": "Years Programming",
-      "required": true,
-      "config": {
-        "min": 0,
-        "max": 50
-      }
-    },
-    {
-      "type": "checkbox",
-      "name": "languages",
-      "label": "Programming Languages",
-      "required": true,
-      "options": [
-        {
-          "label": "JavaScript",
-          "value": "javascript"
-        },
-        {
-          "label": "TypeScript",
-          "value": "typescript"
-        },
-        {
-          "label": "Python",
-          "value": "python"
-        }
-      ],
-      "config": {
-        "label": "Value"
-      }
-    },
-    {
-      "type": "radio",
-      "name": "workshopInterest",
-      "label": "Workshop Interest",
-      "required": true,
-      "options": [
-        {
-          "label": "High",
-          "value": "high"
-        },
-        {
-          "label": "Medium",
-          "value": "medium"
-        },
-        {
-          "label": "Low",
-          "value": "low"
-        }
-      ],
-      "config": {
-        "label": "Value"
-      }
+  {
+    "type": "text",
+    "name": "name",
+    "label": "Name",
+    "required": true,
+    "config": {
+      "maxLength": 100
     }
-  ]
+  },
+  {
+    "type": "email",
+    "name": "email",
+    "label": "Email",
+    "required": true,
+    "config": {
+      "pattern": "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+[.][a-zA-Z]{2,}$"
+    }
+  },
+  {
+    "type": "textarea",
+    "name": "message",
+    "label": "Message",
+    "required": true,
+    "config": {
+      "maxLength": 500
+    }
+  },
+  {
+    "type": "select",
+    "name": "jobType",
+    "label": "Job Type",
+    "required": true,
+    "options": [
+      {
+        "label": "Professional Programmer",
+        "value": "professional"
+      },
+      {
+        "label": "Student",
+        "value": "student"
+      }
+    ],
+    "config": {
+      "label": "Value"
+    }
+  },
+  {
+    "type": "number",
+    "name": "yearsProgramming",
+    "label": "Years Programming",
+    "required": true,
+    "config": {
+      "min": 0,
+      "max": 50
+    }
+  },
+  {
+    "type": "checkbox",
+    "name": "languages",
+    "label": "Programming Languages",
+    "required": true,
+    "options": [
+      {
+        "label": "JavaScript",
+        "id": "javascript"
+      },
+      {
+        "label": "TypeScript",
+        "id": "typescript"
+      },
+      {
+        "label": "Python",
+        "id": "python"
+      }
+    ],
+    "config": {
+      "label": "Value"
+    }
+  },
+  {
+    "type": "radio",
+    "name": "workshopInterest",
+    "label": "Workshop Interest",
+    "required": true,
+    "options": [
+      {
+        "label": "High",
+        "value": "high"
+      },
+      {
+        "label": "Medium",
+        "value": "medium"
+      },
+      {
+        "label": "Low",
+        "value": "low"
+      }
+    ],
+    "config": {
+      "label": "Value"
+    }
+  }
+]

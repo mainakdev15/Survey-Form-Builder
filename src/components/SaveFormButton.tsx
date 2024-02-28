@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 function SaveFormButton() {
-  return (
-    <div>SaveFormButton</div>
-  )
+  return <div>SaveFormButton</div>;
 }
 
-export default SaveFormButton
+export default SaveFormButton;

@@ -1,31 +1,31 @@
-"use client"
+"use client";
 
-import React from 'react'
-import { Form } from '@prisma/client'
-import PreviewDialogueButton from './PreviewDialogueButton'
-import PublishFormButton from './PublishFormButton'
-import SaveFormButton from './SaveFormButton'
-import { DndContext } from '@dnd-kit/core'
+import React from "react";
+import { Form } from "@prisma/client";
+import PreviewDialogueButton from "./PreviewDialogueButton";
+import PublishFormButton from "./PublishFormButton";
+import SaveFormButton from "./SaveFormButton";
+import { DndContext } from "@dnd-kit/core";
 
-function FormBuilder({ form }:{ form: Form }) {
+function FormBuilder({ form }: { form: Form }) {
   return (
     <DndContext>
-            <main>
+      <main>
         <div>
-            <h2>Form</h2>
-            <div>
-                <PreviewDialogueButton/>
-                {!form.published && (
-                    <>
-                    <SaveFormButton/>
-                    <PublishFormButton/>
-                    </>
-                )}
-            </div>
+          <h2>Form</h2>
+          <div>
+            <PreviewDialogueButton />
+            {!form.published && (
+              <>
+                <SaveFormButton />
+                <PublishFormButton />
+              </>
+            )}
+          </div>
         </div>
-    </main>
+      </main>
     </DndContext>
-  )
+  );
 }
 
-export default FormBuilder
+export default FormBuilder;

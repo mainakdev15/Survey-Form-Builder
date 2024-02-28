@@ -1,16 +1,13 @@
-"use client"
-import clsx from 'clsx'
-import React, {useEffect} from 'react'
+"use client";
+import clsx from "clsx";
+import React, { useEffect } from "react";
 
-function ErrorPage({error}:{error: Error}) {
+function ErrorPage({ error }: { error: Error }) {
+  useEffect(() => {
+    console.log(error);
+  }, [error]);
 
-    useEffect(() => {
-        console.log(error);
-    }, [error]);
-    
-  return (
-    <div>error</div>
-  )
+  return <div>error</div>;
 }
 
-export default ErrorPage
+export default ErrorPage;

@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 function PreviewDialogueButton() {
-  return (
-    <div>PreviewDialogueButton</div>
-  )
+  return <div>PreviewDialogueButton</div>;
 }
 
-export default PreviewDialogueButton
+export default PreviewDialogueButton;

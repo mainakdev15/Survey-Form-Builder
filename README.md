@@ -5,7 +5,7 @@
 - A survey form builder built with Next JS 14 (App Router), Tailwind and Shadcn.
 - Forms are configured and developed with React Hook Form and Zod is used for schema validation.
 - A MongoDB M0 Cluster as well as a Vercel PostgreSQL DB Instance is initiated and configured for the v1 phase.
-- Final DB choice will depend on scaling needs and features. 
+- Final DB choice will depend on scaling needs and features.
 Changes to take place in v2.
 <!-- This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 

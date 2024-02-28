@@ -14,16 +14,15 @@ export async function CreateForm(data: formSchemaType) {
 
   const form = await prisma.form.create({
     data: {
-         userId: "1",
-         name:data.name,
-         email:data.email,
-         
-    }
-    })
+      userId: "1",
+      name: data.name,
+      email: data.email,
+    },
+  });
 
-    if(!form){
-        throw new Error("Something went wrong")
-    }
+  if (!form) {
+    throw new Error("Something went wrong");
+  }
 
-    return form.id;
+  return form.id;
 }

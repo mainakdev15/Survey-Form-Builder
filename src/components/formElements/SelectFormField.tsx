@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 type Option = {
   label: string;
@@ -12,11 +12,16 @@ type SelectFormFieldProps = {
   options?: Option[];
 };
 
-const SelectFormField: React.FC<SelectFormFieldProps> = ({ label, name, required, options }) => {
+const SelectFormField: React.FC<SelectFormFieldProps> = ({
+  label,
+  name,
+  required,
+  options,
+}) => {
   return (
     <div>
       <label htmlFor={name}>
-        {label} {required && <span style={{ color: 'red' }}>*</span>}
+        {label} {required && <span style={{ color: "red" }}>*</span>}
       </label>
       <select name={name} id={name} required={required}>
         <option value="">Select</option>
@@ -32,4 +37,3 @@ const SelectFormField: React.FC<SelectFormFieldProps> = ({ label, name, required
 };
 
 export default SelectFormField;
-

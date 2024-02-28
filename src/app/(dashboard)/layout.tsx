@@ -1,18 +1,18 @@
-import Logo from '@/components/Logo'
-import React from 'react'
+import Logo from "@/components/Logo";
+import React from "react";
 
-type Props = {}
+type Props = {};
 
-function Layout({ children }:{ children: React.ReactNode}) {
+function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div>
-        <nav className='flex justify-between items-center border-b'>
-            <Logo/>
-            {/* <Profile/> */}
-        </nav>
-        <main>{children}</main>
+      <nav className="flex justify-between items-center border-b">
+        <Logo />
+        {/* <Profile/> */}
+      </nav>
+      <main>{children}</main>
     </div>
-  )
+  );
 }
 
-export default Layout
+export default Layout;
