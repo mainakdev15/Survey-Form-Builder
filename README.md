@@ -1,4 +1,13 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Survey Form Builder
+
+# V1
+
+- A survey form builder built with Next JS 14 (App Router), Tailwind and Shadcn.
+- Forms are configured and developed with React Hook Form and Zod is used for schema validation.
+- A MongoDB M0 Cluster as well as a Vercel PostgreSQL DB Instance is initiated and configured for the v1 phase.
+- Final DB choice will depend on scaling needs and features. 
+Changes to take place in v2.
+<!-- This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
 
@@ -33,4 +42,4 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details. -->
