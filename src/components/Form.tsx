@@ -120,10 +120,6 @@ function Form() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam et,
-              laboriosam animi autem expedita possimus! Deserunt repudiandae,
-              fugiat explicabo, quaerat aliquam possimus saepe accusantium cum
-              officia sed sit? Quasi, nobis!
               <SurveyForm schema={survey} />
             </CardContent>
           </Card>

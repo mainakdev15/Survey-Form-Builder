@@ -10,9 +10,9 @@ interface Props {
 async function BuilderPage({ params }: Props) {
   const { id } = params;
   const form = await GetFormById(+id);
-  if (!form) throw new Error("Form not found");
+  // if (!form) throw new Error("Form not found");
 
-  return <FormBuilder form={form} />;
+  // return <FormBuilder form={form} />;
 }
 
 export default BuilderPage;
