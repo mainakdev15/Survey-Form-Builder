@@ -18,6 +18,7 @@ import CheckboxFormField from "./formElements/CheckboxFormField";
 import NumberFormField from "./formElements/NumberFormField";
 import RadioFormField from "./formElements/RadioFormField";
 import { useForm } from "react-hook-form";
+import { toast } from "./ui/use-toast";
 
 type Option = {
   label: string;
@@ -44,10 +45,10 @@ const SurveyForm: FC<SurveyFormProps> = ({ schema }) => {
       case "text":
       case "email":
       case "textarea":
-        return <TextFormField key={index} {...question} />;
+        return <TextFormField control={form.control} key={index} {...question} />;
 
       case "select":
-        return <SelectFormField key={index} {...question} />;
+        return <SelectFormField control={form.control} key={index} {...question} />;
 
       case "number":
         return <NumberFormField key={index} {...question} />;
@@ -63,11 +64,23 @@ const SurveyForm: FC<SurveyFormProps> = ({ schema }) => {
     }
   };
 
+  const onSubmit = () => {
+    const formData = form.getValues();
+    toast({
+      title: "Survey Form Submitted",
+      description: (
+        <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
+          <code className="text-white">{JSON.stringify(formData, null, 2)}</code>
+        </pre>
+      ),
+    });
+  };
+
   return (
     <Form {...form}>
-      <form className="space-y-3">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-3">
         {schema.map((question, index) => renderFormField(question, index))}
-        <button type="submit">Submit</button>
+        <Button type="submit">Submit</Button>
       </form>
     </Form>
   );

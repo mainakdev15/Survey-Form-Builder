@@ -9,7 +9,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
  import { Input } from "../ui/input";
- import { useForm } from "react-hook-form";
+ import { UseFormReturn, useForm } from "react-hook-form";
  import { zodResolver } from "@hookform/resolvers/zod";
  
 type TextFormFieldProps = {
@@ -18,6 +18,7 @@ type TextFormFieldProps = {
   type: string;
   required: boolean;
   config: Record<string, any>;
+  control: UseFormReturn["control"];
 };
 
 const TextFormField: React.FC<TextFormFieldProps> = ({
@@ -26,14 +27,14 @@ const TextFormField: React.FC<TextFormFieldProps> = ({
   type,
   required,
   config,
+  control
 }) => {
-  const form = useForm();
   return (
     <div>
       <FormField
       name={name}
-       control={form.control}
-       render={() =>(
+       control={control}
+       render={({ field }) =>(
         <FormItem>
           <FormLabel htmlFor={name}>
             {label} {required && <span style={{ color: "red" }}>*</span>}
@@ -41,9 +42,9 @@ const TextFormField: React.FC<TextFormFieldProps> = ({
           <FormControl>
             <Input 
               type={type}
-              name={name}
               id={name}
               required={required}
+              {...field}
               {...config} 
             />
           </FormControl>
