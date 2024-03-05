@@ -1,41 +1,42 @@
-"use server";
+// "use server";
 
-import prisma from "@/lib/prisma";
-import { formSchema, formSchemaType } from "@/schemas/form";
+// import prisma from "@/lib/prisma";
+// import { formSchema, formSchemaType } from "@/schemas/form";
 
-class UserNotFoundErr extends Error {}
+// class UserNotFoundErr extends Error {}
 
-export async function CreateForm(data: formSchemaType) {
-  const validation = formSchema.safeParse(data);
+// export async function CreateForm(data: formSchemaType) {
+//   const validation = formSchema.safeParse(data);
 
-  if (!validation.success) {
-    throw new Error("form not valid");
-  }
+//   if (!validation.success) {
+//     throw new Error("form not valid");
+//   }
 
-  const form = await prisma.form.create({
-    data: {
-      userId: "1",
-      name: data.name,
-      email: data.email,
-    },
-  });
+//   const form = await prisma.form.create({
+//     data: {
+//       userId: "1",
+//       name: data.name,
+//       email: data.email,
+//       sector: data.sector,
+//     },
+//   });
 
-  if (!form) {
-    throw new Error("Something went wrong");
-  }
+//   if (!form) {
+//     throw new Error("Something went wrong");
+//   }
 
-  return form.id;
-}
-export async function GetFormById(id: number) {
-  // const user = await currentUser();
-  // if (!user) {
-  //   throw new UserNotFoundErr();
-  // }
+//   return form.id;
+// }
+// export async function GetFormById(id: number) {
+//   // const user = await currentUser();
+//   // if (!user) {
+//   //   throw new UserNotFoundErr();
+//   // }
 
-  // return await prisma.form.findUnique({
-  //   where: {
-  //     userId: user.id,
-  //     id,
-  //   },
-  // });
-}
+//   // return await prisma.form.findUnique({
+//   //   where: {
+//   //     userId: user.id,
+//   //     id,
+//   //   },
+//   // });
+// }
