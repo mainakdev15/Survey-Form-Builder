@@ -1,18 +1,18 @@
-import { GetFormById } from "@/actions/form";
-import FormBuilder from "@/components/FormBuilder";
+// import { GetFormById } from "@/actions/form";
+// import FormBuilder from "@/components/FormBuilder";
 
-interface Props {
-  params: {
-    id: string;
-  };
-}
+// interface Props {
+//   params: {
+//     id: string;
+//   };
+// }
 
-async function BuilderPage({ params }: Props) {
-  const { id } = params;
-  const form = await GetFormById(+id);
-  // if (!form) throw new Error("Form not found");
+// async function BuilderPage({ params }: Props) {
+//   const { id } = params;
+//   const form = await GetFormById(+id);
+//   // if (!form) throw new Error("Form not found");
 
-  // return <FormBuilder form={form} />;
-}
+//   // return <FormBuilder form={form} />;
+// }
 
-export default BuilderPage;
+// export default BuilderPage;
