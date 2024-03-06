@@ -10,7 +10,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { useForm, FieldValues } from "react-hook-form";
+import { useForm, FieldValues, UseFormReturn } from "react-hook-form";
 import { Checkbox } from "../ui/checkbox";
 
 type Option = {
@@ -23,6 +23,8 @@ type CheckboxFormFieldProps = {
   name: string;
   required: boolean;
   options?: Option[];
+  control: UseFormReturn["control"];
+  defaultValue?: FieldValues;
 };
 
 const CheckboxFormField: React.FC<CheckboxFormFieldProps> = ({
@@ -30,8 +32,9 @@ const CheckboxFormField: React.FC<CheckboxFormFieldProps> = ({
   name,
   required,
   options,
+  control,
+  defaultValue,
 }) => {
-  const { control } = useForm<FieldValues>();
   return (
     <FormField
       name={name}
@@ -44,9 +47,9 @@ const CheckboxFormField: React.FC<CheckboxFormFieldProps> = ({
           {options &&
             options.map((opt, optionIndex) => (
               <FormField
-                key={opt.value}
+                key={optionIndex}
                 control={control}
-                name={""}
+                name={name}
                 render={({ field }) => {
                   return (
                     <FormItem
@@ -68,6 +71,8 @@ const CheckboxFormField: React.FC<CheckboxFormFieldProps> = ({
                                   ),
                                 );
                           }}
+                          {...field}
+                          {...control}
                         />
                       </FormControl>
                       <FormLabel
@@ -86,15 +91,5 @@ const CheckboxFormField: React.FC<CheckboxFormFieldProps> = ({
     />
   );
 };
-/* <FormLabel>
-        {label} {required && <span style={{ color: 'red' }}>*</span>}
-      </FormLabel>
-      {options &&
-        options.map((opt, optionIndex) => (
-          <div key={optionIndex}>
-            <Input type="checkbox" name={name} id={`${name}_${optionIndex}`} value={opt.value} />
-            <FormLabel htmlFor={`${name}_${optionIndex}`}>{opt.label}</FormLabel>
-          </div>
-        ))} */
 
 export default CheckboxFormField;

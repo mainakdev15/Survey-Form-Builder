@@ -75,7 +75,7 @@ function ProfileForm() {
             </FormItem>
           )}
         />
-        <Button type="submit">Next</Button>
+        <Button size="xl" type="submit">Next</Button>
       </form>
     </Form>
   );

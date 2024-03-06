@@ -1,10 +1,4 @@
 import React from "react";
-import { Card,
-    CardContent,
-    CardDescription,
-    CardFooter,
-    CardHeader,
-    CardTitle, } from "@/components/ui/card";
 import ProfileForm from "@/components/ProfileForm";
 import SurveyForm from "@/components/SurveyForm";
 import survey from "../../survey.json";
@@ -24,7 +18,7 @@ type Option = {
   };
   
   type SurveyFormProps = {
-    schema: Question[];
+    schema: Question[] | any;
   };
 
 interface Tab {
@@ -32,8 +26,8 @@ interface Tab {
   value: string;
   title: string;
   description: string;
-  content: React.FC | React.FC<SurveyFormProps> | React.FC<{ schema?: SurveyFormProps }>;
-  schema?: SurveyFormProps;
+  content: React.FC | React.FC<SurveyFormProps> | (() => React.ReactNode);
+  schema?: Question[] | SurveyFormProps;
 }
 
 const tabs: Tab[] = [
@@ -50,7 +44,7 @@ const tabs: Tab[] = [
       description: "Start answering the questionnaire",
       value: "survey",
       content: SurveyForm,
-      schema: survey,
+      schema: survey as Question[],
     },
     {
       label: "Section 3",

@@ -63,15 +63,15 @@
     "options": [
       {
         "label": "JavaScript",
-        "id": "javascript"
+        "value": "javascript"
       },
       {
         "label": "TypeScript",
-        "id": "typescript"
+        "value": "typescript"
       },
       {
         "label": "Python",
-        "id": "python"
+        "value": "python"
       }
     ],
     "config": {

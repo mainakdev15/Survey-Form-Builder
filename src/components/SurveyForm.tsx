@@ -51,13 +51,13 @@ const SurveyForm: FC<SurveyFormProps> = ({ schema }) => {
         return <SelectFormField control={form.control} key={index} {...question} />;
 
       case "number":
-        return <NumberFormField key={index} {...question} />;
+        return <NumberFormField control={form.control} key={index} {...question} />;
 
       case "checkbox":
-        return <CheckboxFormField key={index} {...question} />;
+        return <CheckboxFormField control={form.control} key={index} {...question} />;
 
       case "radio":
-        return <RadioFormField key={index} {...question} />;
+        return <RadioFormField control={form.control} key={index} {...question} />;
 
       default:
         return null;
@@ -80,7 +80,7 @@ const SurveyForm: FC<SurveyFormProps> = ({ schema }) => {
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-3">
         {schema.map((question, index) => renderFormField(question, index))}
-        <Button type="submit">Submit</Button>
+        <Button  size="xl" type="submit">Submit</Button>
       </form>
     </Form>
   );

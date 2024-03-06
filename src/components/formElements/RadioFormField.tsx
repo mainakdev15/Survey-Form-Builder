@@ -12,7 +12,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { useForm } from "react-hook-form";
+import { UseFormReturn, useForm } from "react-hook-form";
 type Option = {
   label: string;
   value: string;
@@ -23,6 +23,8 @@ type RadioFormFieldProps = {
   name: string;
   required: boolean;
   options?: Option[];
+  control : UseFormReturn["control"];
+  defaultValue? :string | number ;
 };
 
 const RadioFormField: React.FC<RadioFormFieldProps> = ({
@@ -30,12 +32,12 @@ const RadioFormField: React.FC<RadioFormFieldProps> = ({
   name,
   required,
   options,
+  control,
 }) => {
-  const form = useForm();
   return (
     <FormField
       name={name}
-      control={form.control}
+      control={control}
       render={({ field }) => (
         <FormItem className="space-y-3">
           <FormLabel>
@@ -54,7 +56,8 @@ const RadioFormField: React.FC<RadioFormFieldProps> = ({
                     className="flex items-center space-x-3 space-y-0"
                   >
                     <FormControl>
-                      <RadioGroupItem value={opt.value} />
+                      <RadioGroupItem value={opt.value} 
+                      {...control}/>
                     </FormControl>
                     <FormLabel htmlFor={`${name}_${optionIndex}`}>
                       {opt.label}

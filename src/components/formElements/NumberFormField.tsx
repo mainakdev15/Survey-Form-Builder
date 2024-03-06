@@ -10,7 +10,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { useForm } from "react-hook-form";
+import { UseFormReturn } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 type NumberFormFieldProps = {
@@ -18,6 +18,7 @@ type NumberFormFieldProps = {
   name: string;
   required: boolean;
   config: Record<string, any>;
+  control: UseFormReturn["control"];
 };
 
 const NumberFormField: React.FC<NumberFormFieldProps> = ({
@@ -25,12 +26,12 @@ const NumberFormField: React.FC<NumberFormFieldProps> = ({
   name,
   required,
   config,
+  control
 }) => {
-  const form = useForm();
   return (
     <FormField
       name={name}
-      control={form.control}
+      control={control}
       render={({ field }) => (
         <FormItem>
           <FormLabel htmlFor={name}>
@@ -39,9 +40,9 @@ const NumberFormField: React.FC<NumberFormFieldProps> = ({
           <FormControl>
             <Input
               type="number"
-              name={name}
               id={name}
               required={required}
+              {...field}
               {...config}
             />
           </FormControl>

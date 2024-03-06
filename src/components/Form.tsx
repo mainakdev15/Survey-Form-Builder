@@ -12,11 +12,6 @@ import {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import tabs from "@/schemas/tabSchema";
 
-type Option = {
-  label: string;
-  value: string;
-};
-
 function Form() {
   const [activeTab, setActiveTab] = useState(tabs[0].value);
   const handleSaveChanges = () => {
